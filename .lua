@@ -312,7 +312,7 @@ PlayerViewer.Settings.BoxTop = Framework:Draw("Square",{Thickness=1,Filled=true,
 PlayerViewer.Settings.BoxOut = Framework:Draw("Square",{Thickness=1,Filled=false,Color = Color3.fromRGB(26,26,32),ZIndex = -9,Visible=false,Transparency=1})
 
 PlayerViewer.Settings.Box.Size = PlayerViewer.Settings.Size
-PlayerViewer.Settings.Box.Position = Vector2.new((Camera.ViewportSize.X/Camera.ViewportSize.X)+50,Camera.ViewportSize.Y/3)
+PlayerViewer.Settings.Box.Position = Vector2.new((Camera.ViewportSize.X/Camera.ViewportSize.X)+10,Camera.ViewportSize.Y/3)
 PlayerViewer.Settings.BoxTop.Size = Vector2.new(PlayerViewer.Settings.Box.Size.X,2)
 PlayerViewer.Settings.BoxTop.Position = PlayerViewer.Settings.Box.Position + Vector2.new(0,1)
 PlayerViewer.Settings.BoxOut.Size = Vector2.new(PlayerViewer.Settings.Box.Size.X+1,PlayerViewer.Settings.Box.Size.Y)
