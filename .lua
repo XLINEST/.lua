@@ -355,7 +355,7 @@ function PlayerViewer:SortText(Text)
 end
 function PlayerViewer:Add(Text2,Centered,Title)
     local MainBox = PlayerViewer.Settings.Box
-    local Text = Framework:Draw("Text", {Text=Text2,Color=Color3.fromRGB(255,255,255),Size=15,Font = 1,Outline=true,Visible=true,Center=Centered,Transparency=1})
+    local Text = Framework:Draw("Text", {Text=Text2,Color=Color3.fromRGB(255,255,255),Size=16,Font = 1,Outline=true,Visible=true,Center=Centered,Transparency=1})
     if Title == true then
 	Text.Text = Text2
     else
