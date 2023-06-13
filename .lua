@@ -39,6 +39,9 @@ local SkyBoxes = {
     ["Clouded Sky"] = {["SkyboxBk"]="rbxassetid://252760981",["SkyboxDn"]="rbxassetid://252763035",["SkyboxFt"]="rbxassetid://252761439",["SkyboxLf"]="rbxassetid://252760980",["SkyboxRt"]="rbxassetid://252760986",["SkyboxUp"]="rbxassetid://252762652"},
     --["test"] = {"SkyboxBk"="rbxassetid://","SkyboxDn"="rbxassetid://","SkyboxFt"="rbxassetid://","SkyboxLf"="rbxassetid://","SkyboxRt"="rbxassetid://","SkyboxUp"="rbxassetid://"},
 }
+local HitSounds = {Default = "rbxassetid://9119561046",What="rbxassetid://3748516344",Neverlose = "rbxassetid://8726881116",Gamesense = "rbxassetid://4817809188",Rust = "rbxassetid://1255040462",["Among Us"] = "rbxassetid://5700183626",["CS:GO"] = "rbxassetid://6937353691",["Call of Duty"] = "rbxassetid://5952120301",Click = "rbxassetid://8053704437",Steve = "rbxassetid://4965083997",}
+local StoneHit = {Default = "rbxassetid://9118630389",["Collect Stone"]="rbxassetid://3748524689"}
+local WoodHit = {Default = "rbxassetid://9125573608",["Collect Wood"]="rbxassetid://3748515445"}
 
 local PlayerViewer = {Settings={Size=Vector2.new(180, 20),Box=nil,BoxTop=nil,BoxOut=nil,BackgroundColor=Color3.fromRGB(26,26,32),Texts={}}}
 
