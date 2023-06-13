@@ -129,7 +129,7 @@ function Framework:GetEntitys()
     return getrenv()._G.modules.Entity.List
 end
 function Framework:GetPlayers()
-    return getupvalues(getrenv()._G.modules.Player.GetPlayerModel)[1]
+    return getupvalues(getrenv()._G.modules.Player.SetPlayerArmor)[1]
 end
 function Framework:DistanceFromCharacter(Vector3)
     return (CharcaterMiddle:GetPivot().p - Vector3).Magnitude
