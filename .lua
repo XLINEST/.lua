@@ -39,7 +39,8 @@ local SkyBoxes = {
     ["Clouded Sky"] = {["SkyboxBk"]="rbxassetid://252760981",["SkyboxDn"]="rbxassetid://252763035",["SkyboxFt"]="rbxassetid://252761439",["SkyboxLf"]="rbxassetid://252760980",["SkyboxRt"]="rbxassetid://252760986",["SkyboxUp"]="rbxassetid://252762652"},
     --["test"] = {"SkyboxBk"="rbxassetid://","SkyboxDn"="rbxassetid://","SkyboxFt"="rbxassetid://","SkyboxLf"="rbxassetid://","SkyboxRt"="rbxassetid://","SkyboxUp"="rbxassetid://"},
 }
-local PlayerViewer = {Settings={Size=Vector2.new(180, 20),Box=nil,BoxTop=nil,BoxOut=nil,BackgroundColor=Color3.fromRGB(17,17,19),Texts={}}}
+
+local PlayerViewer = {Settings={Size=Vector2.new(180, 20),Box=nil,BoxTop=nil,BoxOut=nil,BackgroundColor=Color3.fromRGB(26,26,32),Texts={}}}
 
 --Functions
 function Framework:CheckSkins()
@@ -309,7 +310,7 @@ end
 --Armor Viewer
 PlayerViewer.Settings.Box = Framework:Draw("Square",{Thickness=1,Filled=true,Color=PlayerViewer.Settings.BackgroundColor,ZIndex = -9,Visible=false,Transparency=1})
 PlayerViewer.Settings.BoxTop = Framework:Draw("Square",{Thickness=1,Filled=true,Color=Color3.fromRGB(0,255,239),ZIndex = -8,Visible=false,Transparency=1})
-PlayerViewer.Settings.BoxOut = Framework:Draw("Square",{Thickness=1,Filled=false,Color = Color3.fromRGB(26,26,32),ZIndex = -9,Visible=false,Transparency=1})
+PlayerViewer.Settings.BoxOut = Framework:Draw("Square",{Thickness=1,Filled=false,Color = Color3.fromRGB(17,17,19),ZIndex = -9,Visible=false,Transparency=1})
 
 PlayerViewer.Settings.Box.Size = PlayerViewer.Settings.Size
 PlayerViewer.Settings.Box.Position = Vector2.new((Camera.ViewportSize.X/Camera.ViewportSize.X)+8,Camera.ViewportSize.Y/3)
@@ -349,7 +350,7 @@ function PlayerViewer:SortText(Text)
 end
 function PlayerViewer:Add(Text2,Centered,Title)
     local MainBox = PlayerViewer.Settings.Box
-    local Text = Framework:Draw("Text", {Text=Text2,Color=Color3.fromRGB(255,255,255),Size=13,Font = 1,Outline=true,Visible=true,Center=Centered,Transparency=1})
+    local Text = Framework:Draw("Text", {Text=Text2,Color=Color3.fromRGB(255,255,255),Size=15,Font = 1,Outline=true,Visible=true,Center=Centered,Transparency=1})
     if Title == true then
 	Text.Text = Text2
     else
@@ -357,12 +358,12 @@ function PlayerViewer:Add(Text2,Centered,Title)
     end
     table.insert(PlayerViewer.Settings.Texts, Text)
     local TextAmmount = #PlayerViewer.Settings.Texts
-    MainBox.Size = Vector2.new(MainBox.Size.X,20*TextAmmount)
-    Text.Position = MainBox.Position + Vector2.new(5, (TextAmmount - 1) * 20)
+    MainBox.Size = Vector2.new(MainBox.Size.X,18*TextAmmount)
+    Text.Position = MainBox.Position + Vector2.new(5, (TextAmmount - 1) * 18)
     if Centered == true then
         Text.Position = MainBox.Position + Vector2.new(MainBox.Size.X / 2, 3)
     else
-        Text.Position = MainBox.Position + Vector2.new(15, (TextAmmount - 1) * 20)
+        Text.Position = MainBox.Position + Vector2.new(15, (TextAmmount - 1) * 18)
     end
     PlayerViewer.Settings.BoxOut.Size = Vector2.new(PlayerViewer.Settings.Box.Size.X+1,PlayerViewer.Settings.Box.Size.Y)
     return Text
