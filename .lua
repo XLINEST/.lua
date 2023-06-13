@@ -308,7 +308,7 @@ end
 
 
 --Armor Viewer
-PlayerViewer.Settings.Box = Framework:Draw("Square",{Thickness=1,Filled=true,Color=PlayerViewer.Settings.BackgroundColor,ZIndex = -9,Visible=false,Transparency=1})
+PlayerViewer.Settings.Box = Framework:Draw("Square",{Thickness=1,Filled=true,Color=Color3.fromRGB(19,19,21),ZIndex = -9,Visible=false,Transparency=1})
 PlayerViewer.Settings.BoxTop = Framework:Draw("Square",{Thickness=1,Filled=true,Color=Color3.fromRGB(0,255,239),ZIndex = -8,Visible=false,Transparency=1})
 PlayerViewer.Settings.BoxOut = Framework:Draw("Square",{Thickness=1,Filled=false,Color = Color3.fromRGB(0,0,0),ZIndex = -9,Visible=false,Transparency=1})
 PlayerViewer.Settings.BoxInner = Framework:Draw("Square",{Thickness=1,Filled=false,Color = Color3.fromRGB(19,19,21),ZIndex = -9,Visible=false,Transparency=1})
