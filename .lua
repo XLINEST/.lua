@@ -310,8 +310,8 @@ end
 --Armor Viewer
 PlayerViewer.Settings.Box = Framework:Draw("Square",{Thickness=1,Filled=true,Color=PlayerViewer.Settings.BackgroundColor,ZIndex = -9,Visible=false,Transparency=1})
 PlayerViewer.Settings.BoxTop = Framework:Draw("Square",{Thickness=1,Filled=true,Color=Color3.fromRGB(0,255,239),ZIndex = -8,Visible=false,Transparency=1})
-PlayerViewer.Settings.BoxOut = Framework:Draw("Square",{Thickness=1,Filled=false,Color = Color3.fromRGB(17,17,19),ZIndex = -9,Visible=false,Transparency=1})
-PlayerViewer.Settings.BoxInner = Framework:Draw("Square",{Thickness=1,Filled=false,Color = Color3.fromRGB(17,17,19),ZIndex = -7,Visible=false,Transparency=1})
+PlayerViewer.Settings.BoxOut = Framework:Draw("Square",{Thickness=1,Filled=false,Color = Color3.fromRGB(0,0,0),ZIndex = -9,Visible=false,Transparency=1})
+PlayerViewer.Settings.BoxInner = Framework:Draw("Square",{Thickness=1,Filled=false,Color = Color3.fromRGB(17,17,19),ZIndex = -10,Visible=false,Transparency=1})
 
 PlayerViewer.Settings.Box.Size = PlayerViewer.Settings.Size
 PlayerViewer.Settings.Box.Position = Vector2.new((Camera.ViewportSize.X/Camera.ViewportSize.X)+8,Camera.ViewportSize.Y/3)
@@ -355,7 +355,7 @@ function PlayerViewer:SortText(Text)
 end
 function PlayerViewer:Add(Text2,Centered,Title)
     local MainBox = PlayerViewer.Settings.Box
-    local Text = Framework:Draw("Text", {Text=Text2,Color=Color3.fromRGB(255,255,255),Size=16,Font = 2,Outline=true,Visible=true,Center=Centered,Transparency=1})
+    local Text = Framework:Draw("Text", {Text=Text2,Color=Color3.fromRGB(255,255,255),Size=14,Font = 2,Outline=true,Visible=true,Center=Centered,Transparency=1})
     if Title == true then
 	Text.Text = Text2
     else
@@ -363,7 +363,7 @@ function PlayerViewer:Add(Text2,Centered,Title)
     end
     table.insert(PlayerViewer.Settings.Texts, Text)
     local TextAmmount = #PlayerViewer.Settings.Texts
-    MainBox.Size = Vector2.new(MainBox.Size.X,16*TextAmmount)
+    MainBox.Size = Vector2.new(MainBox.Size.X,18*TextAmmount)
     Text.Position = MainBox.Position + Vector2.new(5, (TextAmmount - 1) * 18)
     if Centered == true then
         Text.Position = MainBox.Position + Vector2.new(MainBox.Size.X / 2, 3)
