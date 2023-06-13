@@ -311,6 +311,7 @@ end
 PlayerViewer.Settings.Box = Framework:Draw("Square",{Thickness=1,Filled=true,Color=PlayerViewer.Settings.BackgroundColor,ZIndex = -9,Visible=false,Transparency=1})
 PlayerViewer.Settings.BoxTop = Framework:Draw("Square",{Thickness=1,Filled=true,Color=Color3.fromRGB(0,255,239),ZIndex = -8,Visible=false,Transparency=1})
 PlayerViewer.Settings.BoxOut = Framework:Draw("Square",{Thickness=1,Filled=false,Color = Color3.fromRGB(17,17,19),ZIndex = -9,Visible=false,Transparency=1})
+PlayerViewer.Settings.BoxInner = Framework:Draw("Square",{Thickness=1,Filled=false,Color = PlayerViewer.Settings.BackgroundColor,ZIndex = -7,Visible=false,Transparency=1})
 
 PlayerViewer.Settings.Box.Size = PlayerViewer.Settings.Size
 PlayerViewer.Settings.Box.Position = Vector2.new((Camera.ViewportSize.X/Camera.ViewportSize.X)+8,Camera.ViewportSize.Y/3)
@@ -318,17 +319,21 @@ PlayerViewer.Settings.BoxTop.Size = Vector2.new(PlayerViewer.Settings.Box.Size.X
 PlayerViewer.Settings.BoxTop.Position = PlayerViewer.Settings.Box.Position + Vector2.new(0,1)
 PlayerViewer.Settings.BoxOut.Size = Vector2.new(PlayerViewer.Settings.Box.Size.X+1.2,PlayerViewer.Settings.Box.Size.Y+1.2)
 PlayerViewer.Settings.BoxOut.Position = PlayerViewer.Settings.Box.Position
+PlayerViewer.Settings.BoxInner.Size = Vector2.new(PlayerViewer.Settings.Box.Size.X-1.2,PlayerViewer.Settings.Box.Size.Y-1.2)
+PlayerViewer.Settings.BoxInner.Position = PlayerViewer.Settings.Box.Position
 
 function PlayerViewer:Toggle(Toggle)
     if Toggle == true then
         PlayerViewer.Settings.Box.Visible = Toggle
         PlayerViewer.Settings.BoxOut.Visible = Toggle
         PlayerViewer.Settings.BoxTop.Visible = Toggle
+	PlayerViewer.Settings.BoxInner= Toggle
 	PlayerViewer.Settings.BoxOut.Size = Vector2.new(PlayerViewer.Settings.Box.Size.X+1,PlayerViewer.Settings.Box.Size.Y)
     else
         PlayerViewer.Settings.Box.Visible = Toggle
         PlayerViewer.Settings.BoxOut.Visible = Toggle
         PlayerViewer.Settings.BoxTop.Visible = Toggle
+	PlayerViewer.Settings.BoxInner = Toggle
     end
 end
 function PlayerViewer:Empty()
@@ -354,7 +359,7 @@ function PlayerViewer:Add(Text2,Centered,Title)
     if Title == true then
 	Text.Text = Text2
     else
- 	PlayerViewer:SortText(Text2)
+ 	Text.Text = PlayerViewer:SortText(Text2)
     end
     table.insert(PlayerViewer.Settings.Texts, Text)
     local TextAmmount = #PlayerViewer.Settings.Texts
