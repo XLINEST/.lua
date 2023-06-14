@@ -402,7 +402,7 @@ do
     function Esp:AddPlayer(Model,PlayerTable)
         local Box,BoxOutline,ArmorText,DistanceText,SleepingText,ToolName = Framework:Draw("Square",{Thickness=1,Filled=false,Color = Esp.Settings.PlayerBoxColor,ZIndex = -9,Transparency=1}),Framework:Draw("Square",{Thickness=2,Filled=false,Color = Color3.fromRGB(0,0,0),ZIndex = -10,Transparency=0}),Framework:Draw("Text",{Text = "Nil",Font=2,Size=13,Center=true,Outline=true,Color = Esp.Settings.PlayerArmorColor,ZIndex = -9}),Framework:Draw("Text",{Text ="",Font=2,Size=13,Center=true,Outline=true,Color = Esp.Settings.PlayerDistanceColor,ZIndex = -9}),Framework:Draw("Text",{Text ="",Font=2,Size=13,Center=true,Outline=true,Color = Esp.Settings.PlayerSleepingColor,ZIndex = -9}),Framework:Draw("Text",{Text ="",Font=2,Size=13,Center=true,Outline=true,Color = Esp.Settings.PlayerToolColor,ZIndex = -9})
         local Render = game:GetService("RunService").RenderStepped:Connect(function()
-            if Model then
+            if Model and Model:FindFirstChild("HumanoidRootPart") then
                 local Position,Visible = Camera:WorldToViewportPoint(Model:GetPivot().p)
                 local scale = 1 / (Position.Z * math.tan(math.rad(Camera.FieldOfView * 0.5)) * 2) * 100;
                 local w,h = math.floor(35 * scale), math.floor(50 * scale);
