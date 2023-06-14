@@ -695,4 +695,5 @@ end
 
 print("Loaded In: "..tick()-oldtick)
 
-return Framework, Esp, Aimbot, Crosshair, PlayerViewer,HitSounds,StoneHit,WoodHit
+--return Framework, Esp, Aimbot, Crosshair, PlayerViewer,HitSounds,StoneHit,WoodHit
+return Framework, Esp, Aimbot, Crosshair, PlayerViewer
